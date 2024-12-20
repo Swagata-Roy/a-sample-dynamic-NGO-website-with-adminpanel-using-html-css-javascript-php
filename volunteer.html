@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Website</title>
+    <link rel="stylesheet" href="css/volunteer.css">
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+</head>
+<body>
+<header>
+    <div class="header-top">
+        <div class="contact-info">
+            <span id="phonetop"></span>
+            <span id="emailtop"></span>
+        </div>
+        <div class="social-media-links">
+            <a href="#" id="facebook-link-top"><img src="img/facebook.svg" alt="Facebook" class="icons"></a>
+            <a href="#" id="youtube-link-top"><img src="img/youtube.svg" alt="YouTube" class="icons"></a>
+            <a href="#" id="instagram-link-top"><img src="img/instagram.svg" alt="Instagram" class="icons"></a>
+        </div>
+    </div>
+    <div class="header-middle">
+        <a href="index.html"><img src="" alt="Logo" class="logo" id="top-logo"></a>
+        <div class="ngo-info">
+            <div class="ngo-name">Example NGO</div>
+            <div class="years">------ Since <span id="year">2020</span> ------</div>
+        </div>
+        <div class="language-donate">
+            <div class="language-toggle">
+                <span>Language</span>
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="bn">বাংলা</option>
+                </select>
+            </div>
+            <a class="donate-btn">Donate</a>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="about_us.html" data-i18n="nav.about">About Us</a></li>
+            <li class="dropdown">
+                <a href="#" data-i18n="nav.support">Support Our Effort</a>
+                <div class="dropdown-content">
+                    <a href="#" data-i18n="nav.partner">Become a Partner</a>
+                    <a href="volunteer.html" data-i18n="nav.volunteer">Volunteer</a>
+                    <a href="#" data-i18n="nav.sponsor">Sponsor Us</a>
+                    <a href="#" data-i18n="nav.materialSupport">Material & Financial Support</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" data-i18n="nav.atrium">Atrium</a>
+                <div class="dropdown-content">
+                    <a href="photos.html" data-i18n="nav.photoSalon">Photo Salon</a>
+                    <a href="videos.html" data-i18n="nav.videoShowcase">Video Showcase</a>
+                </div>
+            </li>
+            <li><a href="projects.html" data-i18n="nav.programs">Programs/Projects</a></li>
+            <li><a href="contact_us.html" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="form-container">
+        <h2 data-i18n="bn.volunteer">Bangladeshi Member/Volunteer</h2>
+        <form id="volunteerFormBn" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="first_name_bd" data-i18n="volunteer.firstName">First Name*</label>
+                <input type="text" id="first_name_bd" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name_bd" data-i18n="volunteer.lastName">Last Name*</label>
+                <input type="text" id="last_name_bd" name="last_name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="form-label" data-i18n="volunteer.email">E-mail*</label>
+                <input type="email" id="email" name="email" class="form-input" required>
+                <span id="emailError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone" data-i18n="volunteer.phone">Phone/Cell Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span id="phoneError" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="gender_bd" data-i18n="volunteer.gender">Gender*</label>
+                <select id="gender_bd" name="gender" class="form-select" required>
+                    <option value="" data-i18n="Gender.genderSelect">Select Gender</option>
+                    <option value="male" data-i18n="volunteerGender.male">Male</option>
+                    <option value="female" data-i18n="volunteerGender.female">Female</option>
+                    <option value="other" data-i18n="volunteerGender.other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="religion_bd" class="form-label" data-i18n="bn.religion">Religion (Optional)</label>
+                <select id="religion_bd" name="religion" class="form-select">
+                    <option value="" data-i18n="religion.select">Select Religion</option>
+                    <option value="hinduism" data-i18n="religion.hinduism">Sanatan</option>
+                    <option value="buddhism" data-i18n="religion.buddhism">Buddhism</option>
+                    <option value="christianity" data-i18n="religion.christianity">Christianity</option>
+                    <option value="islam" data-i18n="religion.islam">Islam</option>
+                    <option value="other" data-i18n="religion.other">Other</option>
+                    <option value="no_religion" data-i18n="religion.no_religion">No Religion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="area_bd" class="form-label" data-i18n="bn.area">Area*</label>
+                <select id="area_bd" name="area" class="form-select" required>
+                    <option value="" data-i18n="area.select">Select Area</option>
+                    <option value="bandarban" data-i18n="bn.bandarban">Bandarban</option>
+                    <option value="barguna" data-i18n="bn.barguna">Barguna</option>
+                    <option value="barisal" data-i18n="bn.barisal">Barisal</option>
+                    <option value="bhola" data-i18n="bn.bhola">Bhola</option>
+                    <option value="bogura" data-i18n="bn.bogura">Bogura</option>
+                    <option value="brahmanbaria" data-i18n="bn.brahmanbaria">Brahmanbaria</option>
+                    <option value="chandpur" data-i18n="bn.chandpur">Chandpur</option>
+                    <option value="chattogram" data-i18n="bn.chattogram">Chattogram</option>
+                    <option value="chuadanga" data-i18n="bn.chuadanga">Chuadanga</option>
+                    <option value="Cox's Bazar" data-i18n="bn.coxsbazar">Cox's Bazar</option>
+                    <option value="cumilla" data-i18n="bn.cumilla">Cumilla</option>
+                    <option value="dhaka" data-i18n="bn.dhaka">Dhaka</option>
+                    <option value="dinajpur" data-i18n="bn.dinajpur">Dinajpur</option>
+                    <option value="faridpur" data-i18n="bn.faridpur">Faridpur</option>
+                    <option value="feni" data-i18n="bn.feni">Feni</option>
+                    <option value="gaibandha" data-i18n="bn.gaibandha">Gaibandha</option>
+                    <option value="gazipur" data-i18n="bn.gazipur">Gazipur</option>
+                    <option value="gopalganj" data-i18n="bn.gopalganj">Gopalganj</option>
+                    <option value="habiganj" data-i18n="bn.habiganj">Habiganj</option>
+                    <option value="jamalpur" data-i18n="bn.jamalpur">Jamalpur</option>
+                    <option value="jashore" data-i18n="bn.jashore">Jashore</option>
+                    <option value="jhalkathi" data-i18n="bn.jhalkathi">Jhalkathi</option>
+                    <option value="jhinaidah" data-i18n="bn.jhinaidah">Jhinaidah</option>
+                    <option value="joypurhat" data-i18n="bn.joypurhat">Joypurhat</option>
+                    <option value="khagrachari" data-i18n="bn.khagrachari">Khagrachari</option>
+                    <option value="khulna" data-i18n="bn.khulna">Khulna</option>
+                    <option value="kishoreganj" data-i18n="bn.kishoreganj">Kishoreganj</option>
+                    <option value="kurigram" data-i18n="bn.kurigram">Kurigram</option>
+                    <option value="kushtia" data-i18n="bn.kushtia">Kushtia</option>
+                    <option value="lakshmipur" data-i18n="bn.lakshmipur">Lakshmipur</option>
+                    <option value="lalmonirhat" data-i18n="bn.lalmonirhat">Lalmonirhat</option>
+                    <option value="madaripur" data-i18n="bn.madaripur">Madaripur</option>
+                    <option value="magura" data-i18n="bn.magura">Magura</option>
+                    <option value="manikganj" data-i18n="bn.manikganj">Manikganj</option>
+                    <option value="meherpur" data-i18n="bn.meherpur">Meherpur</option>
+                    <option value="moulvibazar" data-i18n="bn.moulvibazar">Moulvibazar</option>
+                    <option value="munshiganj" data-i18n="bn.munshiganj">Munshiganj</option>
+                    <option value="mymensingh" data-i18n="bn.mymensingh">Mymensingh</option>
+                    <option value="naogaon" data-i18n="bn.naogaon">Naogaon</option>
+                    <option value="narail" data-i18n="bn.narail">Narail</option>
+                    <option value="narayanganj" data-i18n="bn.narayanganj">Narayanganj</option>
+                    <option value="narsingdi" data-i18n="bn.narsingdi">Narsingdi</option>
+                    <option value="natore" data-i18n="bn.natore">Natore</option>
+                    <option value="netrokona" data-i18n="bn.netrokona">Netrokona</option>
+                    <option value="nilphamari" data-i18n="bn.nilphamari">Nilphamari</option>
+                    <option value="noakhali" data-i18n="bn.noakhali">Noakhali</option>
+                    <option value="pabna" data-i18n="bn.pabna">Pabna</option>
+                    <option value="panchagarh" data-i18n="bn.panchagarh">Panchagarh</option>
+                    <option value="patuakhali" data-i18n="bn.patuakhali">Patuakhali</option>
+                    <option value="pirojpur" data-i18n="bn.pirojpur">Pirojpur</option>
+                    <option value="rajbari" data-i18n="bn.rajbari">Rajbari</option>
+                    <option value="rajshahi" data-i18n="bn.rajshahi">Rajshahi</option>
+                    <option value="rangamati" data-i18n="bn.rangamati">Rangamati</option>
+                    <option value="rangpur" data-i18n="bn.rangpur">Rangpur</option>
+                    <option value="satkhira" data-i18n="bn.satkhira">Satkhira</option>
+                    <option value="shariatpur" data-i18n="bn.shariatpur">Shariatpur</option>
+                    <option value="sherpur" data-i18n="bn.sherpur">Sherpur</option>
+                    <option value="sirajganj" data-i18n="bn.sirajganj">Sirajganj</option>
+                    <option value="sunamganj" data-i18n="bn.sunamganj">Sunamganj</option>
+                    <option value="sylhet" data-i18n="bn.sylhet">Sylhet</option>
+                    <option value="tangail" data-i18n="bn.tangail">Tangail</option>
+                    <option value="thakurgaon" data-i18n="bn.thakurgaon">Thakurgaon</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="picture_bd" data-i18n="bn.picture">Picture(Passport size)*</label>
+                <input type="file" id="picture_bd" name="picture" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="identity_bd" data-i18n="bn.identity">Valid Identity(NID/Driving License/Passport)*</label>
+                <input type="file" id="identity_bd" name="identity" accept="image/*" required>
+            </div>
+            <div class="captcha_and_submit_container">
+            <div class="h-captcha" data-sitekey="0842fe52-8432-4b56-a5a8-d6fa32c811c0" data-theme="dark"></div>
+            <input type="submit" value="SUBMIT">
+            </div>
+        </form>
+        <div id="formMessage"></div>
+    </div>
+
+    <div class="form-container international">
+        <h2>International Member/Volunteer</h2>
+        <form id="volunteerFormIn">
+            <div class="form-group">
+                <label for="first_name_int">First Name*</label>
+                <input type="text" id="first_name_int" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name_int">Last Name*</label>
+                <input type="text" id="last_name_int" name="last_name" required>
+            </div>
+            <div class="form-group">
+                E-mail*
+                <input type="email" id="emailIn" name="email" required>
+                <span id="emailErrorIn" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                Phone/Cell Number*
+                <input type="tel" id="phoneIn" name="phone" required>
+                <span id="phoneErrorIn" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="gender_int">Gender*</label>
+                <select id="gender_int" name="gender" class="form-select" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="transgender">Transgender</option>
+                    <option value="non-binary">Non-binary</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country_int" class="form-label">Country*</label>
+                <select id="country_int" name="country" class="form-select" required>
+                    <option value="">Select Country</option>
+                    <option value="afghanistan">Afghanistan</option>
+                    <option value="albania">Albania</option>
+                    <option value="algeria">Algeria</option>
+                    <option value="andorra">Andorra</option>
+                    <option value="angola">Angola</option>
+                    <option value="antigua_and_barbuda">Antigua and Barbuda</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="armenia">Armenia</option>
+                    <option value="australia">Australia</option>
+                    <option value="austria">Austria</option>
+                    <option value="azerbaijan">Azerbaijan</option>
+                    <option value="bahamas">Bahamas</option>
+                    <option value="bahrain">Bahrain</option>
+                    <option value="barbados">Barbados</option>
+                    <option value="belarus">Belarus</option>
+                    <option value="belgium">Belgium</option>
+                    <option value="belize">Belize</option>
+                    <option value="benin">Benin</option>
+                    <option value="bhutan">Bhutan</option>
+                    <option value="bolivia">Bolivia</option>
+                    <option value="bosnia_and_herzegovina">Bosnia and Herzegovina</option>
+                    <option value="botswana">Botswana</option>
+                    <option value="brazil">Brazil</option>
+                    <option value="brunei">Brunei</option>
+                    <option value="bulgaria">Bulgaria</option>
+                    <option value="burkina_faso">Burkina Faso</option>
+                    <option value="burundi">Burundi</option>
+                    <option value="cabo_verde">Cabo Verde</option>
+                    <option value="cambodia">Cambodia</option>
+                    <option value="cameroon">Cameroon</option>
+                    <option value="canada">Canada</option>
+                    <option value="central_african_republic">Central African Republic</option>
+                    <option value="chad">Chad</option>
+                    <option value="chile">Chile</option>
+                    <option value="china">China</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="comoros">Comoros</option>
+                    <option value="congo_democratic_republic">Congo, Democratic Republic of the</option>
+                    <option value="congo_republic">Congo, Republic of the</option>
+                    <option value="costa_rica">Costa Rica</option>
+                    <option value="croatia">Croatia</option>
+                    <option value="cuba">Cuba</option>
+                    <option value="cyprus">Cyprus</option>
+                    <option value="czech_republic">Czech Republic</option>
+                    <option value="denmark">Denmark</option>
+                    <option value="djibouti">Djibouti</option>
+                    <option value="dominica">Dominica</option>
+                    <option value="dominican_republic">Dominican Republic</option>
+                    <option value="east_timor">East Timor</option>
+                    <option value="ecuador">Ecuador</option>
+                    <option value="egypt">Egypt</option>
+                    <option value="el_salvador">El Salvador</option>
+                    <option value="equatorial_guinea">Equatorial Guinea</option>
+                    <option value="eritrea">Eritrea</option>
+                    <option value="estonia">Estonia</option>
+                    <option value="eswatini">Eswatini</option>
+                    <option value="ethiopia">Ethiopia</option>
+                    <option value="fiji">Fiji</option>
+                    <option value="finland">Finland</option>
+                    <option value="france">France</option>
+                    <option value="gabon">Gabon</option>
+                    <option value="gambia">Gambia</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="germany">Germany</option>
+                    <option value="ghana">Ghana</option>
+                    <option value="greece">Greece</option>
+                    <option value="grenada">Grenada</option>
+                    <option value="guatemala">Guatemala</option>
+                    <option value="guinea">Guinea</option>
+                    <option value="guinea_bissau">Guinea-Bissau</option>
+                    <option value="guyana">Guyana</option>
+                    <option value="haiti">Haiti</option>
+                    <option value="honduras">Honduras</option>
+                    <option value="hungary">Hungary</option>
+                    <option value="iceland">Iceland</option>
+                    <option value="india">India</option>
+                    <option value="indonesia">Indonesia</option>
+                    <option value="iran">Iran</option>
+                    <option value="iraq">Iraq</option>
+                    <option value="ireland">Ireland</option>
+                    <option value="israel">Israel</option>
+                    <option value="italy">Italy</option>
+                    <option value="ivory_coast">Ivory Coast</option>
+                    <option value="jamaica">Jamaica</option>
+                    <option value="japan">Japan</option>
+                    <option value="jordan">Jordan</option>
+                    <option value="kazakhstan">Kazakhstan</option>
+                    <option value="kenya">Kenya</option>
+                    <option value="kiribati">Kiribati</option>
+                    <option value="kosovo">Kosovo</option>
+                    <option value="kuwait">Kuwait</option>
+                    <option value="kyrgyzstan">Kyrgyzstan</option>
+                    <option value="laos">Laos</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="lebanon">Lebanon</option>
+                    <option value="lesotho">Lesotho</option>
+                    <option value="liberia">Liberia</option>
+                    <option value="libya">Libya</option>
+                    <option value="liechtenstein">Liechtenstein</option>
+                    <option value="lithuania">Lithuania</option>
+                    <option value="luxembourg">Luxembourg</option>
+                    <option value="madagascar">Madagascar</option>
+                    <option value="malawi">Malawi</option>
+                    <option value="malaysia">Malaysia</option>
+                    <option value="maldives">Maldives</option>
+                    <option value="mali">Mali</option>
+                    <option value="malta">Malta</option>
+                    <option value="marshall_islands">Marshall Islands</option>
+                    <option value="mauritania">Mauritania</option>
+                    <option value="mauritius">Mauritius</option>
+                    <option value="mexico">Mexico</option>
+                    <option value="micronesia">Micronesia</option>
+                    <option value="moldova">Moldova</option>
+                    <option value="monaco">Monaco</option>
+                    <option value="mongolia">Mongolia</option>
+                    <option value="montenegro">Montenegro</option>
+                    <option value="morocco">Morocco</option>
+                    <option value="mozambique">Mozambique</option>
+                    <option value="myanmar">Myanmar</option>
+                    <option value="namibia">Namibia</option>
+                    <option value="nauru">Nauru</option>
+                    <option value="nepal">Nepal</option>
+                    <option value="netherlands">Netherlands</option>
+                    <option value="new_zealand">New Zealand</option>
+                    <option value="nicaragua">Nicaragua</option>
+                    <option value="niger">Niger</option>
+                    <option value="nigeria">Nigeria</option>
+                    <option value="north_korea">North Korea</option>
+                    <option value="north_macedonia">North Macedonia</option>
+                    <option value="norway">Norway</option>
+                    <option value="oman">Oman</option>
+                    <option value="pakistan">Pakistan</option>
+                    <option value="palau">Palau</option>
+                    <option value="palestine">Palestine</option>
+                    <option value="panama">Panama</option>
+                    <option value="papua_new_guinea">Papua New Guinea</option>
+                    <option value="paraguay">Paraguay</option>
+                    <option value="peru">Peru</option>
+                    <option value="philippines">Philippines</option>
+                    <option value="poland">Poland</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="qatar">Qatar</option>
+                    <option value="romania">Romania</option>
+                    <option value="russia">Russia</option>
+                    <option value="rwanda">Rwanda</option>
+                    <option value="saint_kitts_and_nevis">Saint Kitts and Nevis</option>
+                    <option value="saint_lucia">Saint Lucia</option>
+                    <option value="saint_vincent_and_the_grenadines">Saint Vincent and the Grenadines</option>
+                    <option value="samoa">Samoa</option>
+                    <option value="san_marino">San Marino</option>
+                    <option value="sao_tome_and_principe">Sao Tome and Principe</option>
+                    <option value="saudi_arabia">Saudi Arabia</option>
+                    <option value="senegal">Senegal</option>
+                    <option value="serbia">Serbia</option>
+                    <option value="seychelles">Seychelles</option>
+                    <option value="sierra_leone">Sierra Leone</option>
+                    <option value="singapore">Singapore</option>
+                    <option value="slovakia">Slovakia</option>
+                    <option value="slovenia">Slovenia</option>
+                    <option value="solomon_islands">Solomon Islands</option>
+                    <option value="somalia">Somalia</option>
+                    <option value="south_africa">South Africa</option>
+                    <option value="south_korea">South Korea</option>
+                    <option value="south_sudan">South Sudan</option>
+                    <option value="spain">Spain</option>
+                    <option value="sri_lanka">Sri Lanka</option>
+                    <option value="sudan">Sudan</option>
+                    <option value="suriname">Suriname</option>
+                    <option value="sweden">Sweden</option>
+                    <option value="switzerland">Switzerland</option>
+                    <option value="syria">Syria</option>
+                    <option value="taiwan">Taiwan</option>
+                    <option value="tajikistan">Tajikistan</option>
+                    <option value="tanzania">Tanzania</option>
+                    <option value="thailand">Thailand</option>
+                    <option value="togo">Togo</option>
+                    <option value="tonga">Tonga</option>
+                    <option value="trinidad_and_tobago">Trinidad and Tobago</option>
+                    <option value="tunisia">Tunisia</option>
+                    <option value="turkey">Turkey</option>
+                    <option value="turkmenistan">Turkmenistan</option>
+                    <option value="tuvalu">Tuvalu</option>
+                    <option value="uganda">Uganda</option>
+                    <option value="ukraine">Ukraine</option>
+                    <option value="united_arab_emirates">United Arab Emirates</option>
+                    <option value="united_kingdom">United Kingdom</option>
+                    <option value="united_states">United States</option>
+                    <option value="uruguay">Uruguay</option>
+                    <option value="uzbekistan">Uzbekistan</option>
+                    <option value="vanuatu">Vanuatu</option>
+                    <option value="vatican_city">Vatican City</option>
+                    <option value="venezuela">Venezuela</option>
+                    <option value="vietnam">Vietnam</option>
+                    <option value="yemen">Yemen</option>
+                    <option value="zambia">Zambia</option>
+                    <option value="zimbabwe">Zimbabwe</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="identity_int">Valid Identity (Passport Only)*</label>
+                <input type="file" id="identity_int" name="identity" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="picture_int">Picture*</label>
+                <input type="file" id="picture_int" name="picture" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="bio_int">Short Biography(Max 150 words)*</label>
+                <textarea id="bio_int" name="biography" maxlength="150" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contribution_int">How You Can Contribute(Max 250 words)*</label>
+                <textarea id="contribution_int" name="contribution" maxlength="250" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="hobbies_int">Interest/Hobbies(Max 100 words)*</label>
+                <textarea id="hobbies_int" name="hobbies" maxlength="100" required></textarea>
+            </div>
+            <div class="captcha_and_submit_container">
+            <div class="h-captcha" data-sitekey="0842fe52-8432-4b56-a5a8-d6fa32c811c0" data-theme="dark"></div>
+            <input type="submit" value="SUBMIT">
+            </div>
+        </form>
+        <div id="formMessageIn"></div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="" alt="Logo" id="bottom-logo">
+        </div>
+        <div class="footer-links">
+            <a href="index.html" data-i18n="footer.home">Home</a>
+            <a href="about_us.html" data-i18n="footer.about">About Us</a>
+            <a href="#" data-i18n="footer.support">Sponsor Us</a>
+            <a href="projects.html" data-i18n="footer.programs">Programs/Projects</a>
+            <a href="contact_us.html" data-i18n="footer.contact">Contact Us</a>
+        </div>
+        <div class="footer-contact">
+            <p id="phonefooter"></p>
+            <p id="emailfooter"></p>
+            <div class="social-media-links">
+                <a href="#" id="facebook-link-bottom"><img src="img/facebook.svg" alt="Facebook" class="icons"></a>
+                <a href="#" id="youtube-link-bottom"><img src="img/youtube.svg" alt="YouTube" class="icons"></a>
+                <a href="#" id="instagram-link-bottom"><img src="img/instagram.svg" alt="Instagram" class="icons"></a>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2024 Example NGO. All Rights Reserved</p>
+</footer>
+<script src="js/common.js"></script>
+<script src="js/translate.js"></script>
+<script src="js/volunteer.js"></script>
+</body>
+</html>

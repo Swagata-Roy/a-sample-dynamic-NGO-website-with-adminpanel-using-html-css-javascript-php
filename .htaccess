@@ -1,0 +1,5 @@
+SetEnv DB_HOST " "
+SetEnv DB_USER " "
+SetEnv DB_PASS " "
+SetEnv DB_NAME " "
+SetEnv HCAPTCHA_SECRET " "
